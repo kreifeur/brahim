@@ -412,12 +412,12 @@ def addcharge():
     return {'msg':'added'}
 
 
-""" @app.route("/charge/<id>", methods=["DELETE"])
+@app.route("/charge/<id>", methods=["DELETE"])
 def delete_charge(id):
-    result = customers.delete_one({"_id": ObjectId(id)})
+    result = charges.delete_one({"_id": ObjectId(id)})
     if result.deleted_count == 0:
         return "", 404
-    return "", 204 """
+    return "", 204 
 
 @app.route("/charge/<id>", methods=["PUT"])
 def update_charge(id):
