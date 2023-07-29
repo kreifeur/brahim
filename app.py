@@ -458,10 +458,10 @@ def generate_receipt_to_pdf(products, client, vendeur, versement):
         quantity = product['qte2']
         product_total_amount = int(price) * int(quantity)
         receipt += "------------------------------------\n"
-        receipt += f"Product: {product_name}\n"
-        receipt += f"Price: ${price}\n"
-        receipt += f"Quantity: {quantity}\n"
-        receipt += f"Total: ${product_total_amount}\n\n"
+        receipt += f"Produit: {product_name}\n"
+        receipt += f"Prix: {price}\n"
+        receipt += f"Quant: {quantity}\n"
+        receipt += f"Total: {product_total_amount}\n\n"
 
         total_amount += product_total_amount
 
@@ -469,11 +469,11 @@ def generate_receipt_to_pdf(products, client, vendeur, versement):
     pdf.set_font("Arial", size=12, style='B')
 
     receipt += "----------------- TOTAL -------------------\n"
-    receipt += f"Total: ${total_amount}\n"
-    receipt += f"----------------- PAYMENT -------------------\n"
-    receipt += f"Payment: ${versement}\n"
+    receipt += f"Total: {total_amount}\n"
+    receipt += f"----------------- Versement -------------------\n"
+    receipt += f"Payment: {versement}\n"
     receipt += f"----------------- Difference -------------------\n"
-    receipt += f"Difference: ${total_amount - int(versement)}\n"
+    receipt += f"Difference: {total_amount - int(versement)}\n"
     receipt += "-------------------------------------------------\n\n"
     receipt += "Thank you for your purchase!"
 
